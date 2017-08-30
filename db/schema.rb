@@ -16,12 +16,9 @@ ActiveRecord::Schema.define(version: 20170830004749) do
   enable_extension "plpgsql"
 
   create_table "drones", force: :cascade do |t|
-    t.string "brand"
-    t.string "color"
-    t.string "feature"
-    t.integer "range"
+    t.string "name"
+    t.string "description"
     t.string "image_url"
-    t.integer "rotors"
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
