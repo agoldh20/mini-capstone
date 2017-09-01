@@ -1,0 +1,7 @@
+<% @drones.each do |drone| %>
+<h2>Brand / Model:  <a href="/drones/<%= drone.id %>"><%= drone.name %></a></h2>
+
+<h4><img src='<%= drone.image_url %>'></h4>
+<h3>Description: <%= drone.description %></h3>
+<h4>But wait, how much is it?: $<%= drone.price %></h4>
+<% end %>

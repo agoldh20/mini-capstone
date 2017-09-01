@@ -50,7 +50,7 @@ drone = Drone.new(
                   name: "DJI Spark",
                   description: "White, 4 rotors, 1mile range, FPV, smartphone controller, 4k camera",
                   image_url: "https://cdn2.techadvisor.co.uk/cmsdata/features/3659489/dji-spark-release-date-price-hover.jpg",
-                  price: 35)
+                  price: 500)
 
 drone.save
 

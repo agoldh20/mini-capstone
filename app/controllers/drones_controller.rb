@@ -1,6 +1,21 @@
 class DronesController < ApplicationController
-  def drone_action
+  def index
     @drones = Drone.all
-    render 'drone_page.html.erb'
   end
+
+  def new
+    
+  end
+
+  def create
+    drone = Drone.new(name: params[:name],
+                      description: params[:description],
+                      price: params[:price])
+    drone.save
+  end
+
+  def show
+    @drone = Drone.find(params[:id])
+  end
+
 end
