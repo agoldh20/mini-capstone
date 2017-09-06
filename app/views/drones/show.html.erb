@@ -2,3 +2,11 @@
 <h4><img src= <%= @drone.image_url %>></h4>
 <h3>Description: <%= @drone.description %></h3>
 <h4>But wait, how much is it?: $<%= @drone.price %></h4>
+
+<div>
+<%= link_to "Edit Drone", "/drones/#{ @drone.id }/edit", class: "btn btn-warning" %>
+</div>
+
+<div>
+<%= link_to "Delete Drone", "/drones/#{ @drone.id }", method: :delete, class: "btn btn-danger" %>
+</div>

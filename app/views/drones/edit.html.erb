@@ -1,0 +1,20 @@
+<h1>Edit a drone</h1>
+
+<%= form_tag "/drones/#{@drone.id}", method: :patch do %>
+  <div>
+    Brand / Model <input type="text" name="name" value="<%= @drone.name %>">
+  </div>
+
+  <div>
+    Description <input type="text" name="description" value="<%= @drone.description %>">
+  </div>
+
+  <div>
+    Price <input type="text" name="price" value="<%= @drone.price %>">
+  </div>
+
+  <div>
+  <input type="submit" value="Re-Fly it!">
+</div>
+
+<% end %>
