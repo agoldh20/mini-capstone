@@ -1,7 +1,8 @@
 <h2>Brand / Model: <%= @drone.name %></h2>
 <h4><img src= <%= @drone.image_url %>></h4>
 <h3>Description: <%= @drone.description %></h3>
-<h4>But wait, how much is it?: $<%= @drone.price %></h4>
+<h4>But wait, how much is it?: <%= @drone.sale_message %> Before Tax $<%= @drone.price %>, and after Tax <%= @drone.total_price %></h4>
+<h5>Tax: <%= @drone.tax %></h5>
 
 <div>
 <%= link_to "Edit Drone", "/drones/#{ @drone.id }/edit", class: "btn btn-warning" %>
@@ -10,3 +11,4 @@
 <div>
 <%= link_to "Delete Drone", "/drones/#{ @drone.id }", method: :delete, class: "btn btn-danger" %>
 </div>
+
