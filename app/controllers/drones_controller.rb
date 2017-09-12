@@ -1,6 +1,20 @@
 class DronesController < ApplicationController
   def index
     @drones = Drone.all
+
+    sort_attribute = params[:sort]
+    desc_attribute = params[:desc]
+    discount_amount = params[:discount]
+
+    if sort_attribute
+      @drones = @drones.order(sort_attribute)
+    elsif desc_attribute
+      @drones = @drones.order(desc_attribute => :desc)
+    end
+
+    if discount_amount
+      @drones = @drones.where("price < ?", discount_amount)
+    end
   end
 
   def new

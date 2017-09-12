@@ -1,14 +1,18 @@
 class Drone < ApplicationRecord
   def sale_message
-    return "Discounted Item!" if price < 2
-    return "Everyday Value!" if price > 2
+   return "Discounted Item!" if price <= 40
+   return "Everyday Great Value" if price > 40
+  end
+
+  def discounted?
+    price < 40
   end
 
   def tax
-    tax = price * 0.09
+    price * 0.09
   end
 
   def total_price
-    total_price = price + tax
+    price + tax
   end
 end
