@@ -24,7 +24,8 @@ class DronesController < ApplicationController
   def create
     drone = Drone.new(name: params[:name],
                       description: params[:description],
-                      price: params[:price])
+                      price: params[:price],
+                      supplier_id: params[:supplier_id])
     drone.save
     flash[:success] = "Drone Successfully Created"
     redirect_to "/drones/#{drone.id}"
