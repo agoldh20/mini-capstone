@@ -1,9 +1,9 @@
-pc<div class="row">
+<div class="row">
 <% @drones.each do |drone| %>
   <div class="col-md-4 col-sm-6 product-index-single">
     <div class="well">
       <h2>Brand / Model:  <a href="/drones/<%= drone.id %>"><%= drone.name %></a></h2>
-      <img src='<%= drone.image_url %>'>
+      <img src='<%= drone.images.first.url %>'>
       <h3>Description: <%= drone.description %></h3>
       <h4>But wait, how much is it?: <%= number_to_currency(drone.price) %></h4>
     </div>

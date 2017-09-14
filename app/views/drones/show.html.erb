@@ -1,8 +1,10 @@
 <h2>Brand / Model: <%= @drone.name %></h2>
-<h4><img src= <%= @drone.image_url %>></h4>
+<% @drone.images.each do |image| %>
+  <h4><img src= <%= image.url %>></h4>
+<% end %>
 <h3>Description: <%= @drone.description %></h3>
-<h4>But wait, how much is it?: <%= @drone.sale_message %> Before Tax <%= number_to_currency(@drone.price) %>, and after Tax <%= @drone.total_price %></h4>
-<h5>Tax: <%= @drone.tax %></h5>
+<h4>But wait, how much is it?: <%= @drone.sale_message %> Before Tax <%= number_to_currency(@drone.price) %>, and after Tax <%= number_to_currency(@drone.total_price) %></h4>
+<h5>Tax: <%= number_to_currency(@drone.tax) %></h5>
 
 <div>
 <%= link_to "Edit Drone", "/drones/#{ @drone.id }/edit", class: "btn btn-warning" %>
