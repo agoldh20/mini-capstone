@@ -1,6 +1,7 @@
 class Drone < ApplicationRecord
   belongs_to :supplier
   has_many :images
+  has_many :orders
   
   def sale_message
    return "Discounted Item!" if price <= 40

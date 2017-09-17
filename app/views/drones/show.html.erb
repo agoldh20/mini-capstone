@@ -7,6 +7,13 @@
 <h5>Tax: <%= number_to_currency(@drone.tax) %></h5>
 
 <div>
+  <input type="text" name="quantity">
+</div>
+<div>
+  <input type="Submit" name="Buy Now" value="Buy Now">
+</div>
+<br>
+<div>
 <%= link_to "Edit Drone", "/drones/#{ @drone.id }/edit", class: "btn btn-warning" %>
 </div>
 

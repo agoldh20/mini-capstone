@@ -26,8 +26,6 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#"><%= current_user && current_user.name %><span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Link</a></li>
-            
           </ul>
           <form class="navbar-form navbar-left">
             <div class="form-group">
@@ -46,7 +44,12 @@
                 <li><a href="/?desc=price">Sort By Price, High to Low</a></li>
                 <li><a href="/?sort=name">Sort By Name</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="/signup">Sign Up!</a></li>
+                <% if current_user %>
+                  <li><a href="/logout">Log Out</a></li>
+                <% else %>
+                  <li><a href="/signup">Sign Up!</a></li>
+                  <li><a href="/login">Log In</a></li>
+                <% end %>
               </ul>
             </li>
           </ul>
