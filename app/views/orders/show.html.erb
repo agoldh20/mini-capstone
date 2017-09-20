@@ -1,4 +1,4 @@
 <h3>Bought By:</h3><%= @order.user.name %>
-<h3>Subtotal:</h3> <%= @order.subtotal %>
-<h3>Tax:</h3> <%= @order.tax %>
-<h3>Total:</h3> <%= @order.total %>
+<h3>Subtotal:</h3> <%= number_to_currency(@order.subtotal) %>
+<h3>Tax:</h3> <%= number_to_currency(@order.tax) %>
+<h3>Total:</h3> <%= number_to_currency(@order.total) %>

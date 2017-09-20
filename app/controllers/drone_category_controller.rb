@@ -1,0 +1,2 @@
+class DroneCategoryController < ApplicationController
+end

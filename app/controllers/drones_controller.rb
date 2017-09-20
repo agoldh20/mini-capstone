@@ -6,6 +6,13 @@ class DronesController < ApplicationController
     desc_attribute = params[:desc]
     discount_amount = params[:discount]
 
+    category_attribute = params[:category_name]
+
+    if category_attribute
+      @drones = Category.find_by(name: category_attribute).drones
+    else
+    end
+
     if sort_attribute
       @drones = @drones.order(sort_attribute)
     elsif desc_attribute

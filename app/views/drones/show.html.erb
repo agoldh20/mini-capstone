@@ -20,6 +20,9 @@
 <div>
 <%= link_to "Delete Drone", "/drones/#{ @drone.id }", method: :delete, class: "btn btn-danger" %>
 </div>
+<div>
+  <h6>Tags: <%= @drone.categories.pluck(:name).join(", ") %> </h6>
+</div>
 
 
 <h6>Supplier: <%= @drone.supplier.name %></h6>

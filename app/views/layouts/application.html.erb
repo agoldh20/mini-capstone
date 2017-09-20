@@ -43,7 +43,15 @@
                 <li><a href="/?sort=price">Sort By Price, Low to High</a></li>
                 <li><a href="/?desc=price">Sort By Price, High to Low</a></li>
                 <li><a href="/?sort=name">Sort By Name</a></li>
+                <li role="separator" class="divider">Filter By:</li>
+                <li><a href="/?category_name=Standard%20Camera">Standard Camera</a></li>
+                <li><a href="/?category_name=4k%20Camera">4k Camera</a></li>
+                <li><a href="/?category_name=FPV">FPV</a></li>
+                <li><a href="/?category_name=4%20Rotor">4-Rotor</a></li>
+                <li><a href="/?category_name=6%20Rotor">6-Rotor</a></li>
+                <li><a href="/?category_name=1+mile%20Range">1+ Mile Range</a></li>
                 <li role="separator" class="divider"></li>
+
                 <% if current_user %>
                   <li><a href="/logout">Log Out</a></li>
                 <% else %>
