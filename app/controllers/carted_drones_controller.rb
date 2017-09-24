@@ -1,0 +1,2 @@
+class CartedDronesController < ApplicationController
+end

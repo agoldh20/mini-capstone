@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  get '/' => 'drones#index'
+  get '/drones' => 'drones#index'
 
   get '/drones/new' => 'drones#new'
   post '/drones' => 'drones#create'
-  
-  get '/drones' => 'drones#index'
+
   get '/drones/:id' => 'drones#show'
 
   get '/drones/:id/edit' => 'drones#edit'
@@ -22,6 +21,8 @@ Rails.application.routes.draw do
   get '/orders/new' => 'orders#new'
   post '/orders' => 'orders#create'
   get '/orders/:id' => 'orders#show'
+
+  get '/cart'
 
 
 end
