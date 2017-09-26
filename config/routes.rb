@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/drones' => 'drones#index'
+  get '/' => 'drones#index'
 
   get '/drones/new' => 'drones#new'
   post '/drones' => 'drones#create'
@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   post '/orders' => 'orders#create'
   get '/orders/:id' => 'orders#show'
 
-  get '/cart'
+  get '/cart' => 'carted_drones#index'
+  post '/cart' => 'carted_drones#create'
 
 
 end

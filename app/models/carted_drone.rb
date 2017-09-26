@@ -1,5 +1,5 @@
 class CartedDrone < ApplicationRecord
-  belongs_to :drones
+  belongs_to :drone
   belongs_to :user, optional: true
-  belongs_to :orders, optional: true
+  belongs_to :order, optional: true
 end

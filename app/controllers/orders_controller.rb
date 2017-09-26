@@ -4,17 +4,19 @@ class OrdersController < ApplicationController
   end
 
   def create
-    # drone = Drone.find(params[:drone_id])
-    
+    @cart = CartedDrone.where(user_id: current_user.id, status: "carted")
     order = Order.new(
-                      user_id: current_user.id,
-                      drone_id: params[:drone_id],
-                      quantity: params[:quantity]
+                      user_id: current_user.id
                       )
     
     order.calculate_totals
 
     order.save
+    
+    @cart.each do |item|
+      item.update(status: "ordered", order_id: order.id)
+    end
+
     flash[:success] = "Your drone has been ordered"
     redirect_to "/orders/#{order.id}"
 

@@ -1,0 +1,8 @@
+<% @cart.each do |item| %>
+  <h2>Drone: <%= item.drone.name %></h2>
+  <h2>Quantity: <%= item.quantity %></h2>
+<% end %>
+
+<%= form_tag '/orders', method: :post do %>
+  <input type="submit" value="Buy Now">
+<% end %>
