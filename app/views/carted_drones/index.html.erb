@@ -1,8 +1,8 @@
-<% @cart.each do |item| %>
-  <h2>Drone: <%= item.drone.name %></h2>
-  <h2>Quantity: <%= item.quantity %></h2>
+<% @carted_drones.each do |carted_drone| %>
+  <h2>Drone: <%= carted_drone.drone.name %> Quantity: <%= carted_drone.quantity %>
+    <%= link_to "remove", "/carted_drones/#{carted_drone.id}", method: :delete %>
+  </h2>
 <% end %>
 
-<%= form_tag '/orders', method: :post do %>
-  <input type="submit" value="Buy Now">
-<% end %>
+<%= link_to "Buy Now", "/orders", method: :post, class: "btn btn-primary" %>
+

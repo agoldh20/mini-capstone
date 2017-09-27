@@ -6,7 +6,7 @@
 <h4>But wait, how much is it?: <%= @drone.sale_message %> Before Tax <%= number_to_currency(@drone.price) %>, and after Tax <%= number_to_currency(@drone.total_price) %></h4>
 <h5>Tax: <%= number_to_currency(@drone.tax) %></h5>
 <div>
-  <%= form_tag '/cart', method: :post do %>
+  <%= form_tag '/carted_drones', method: :post do %>
     <input type="hidden" name="drone_id" value="<%= @drone.id %>">
     <h3>Quantity</h3><input type="text" name="quantity">
     <input type="Submit" value="Add To Cart">
@@ -14,12 +14,14 @@
 </div>
 <br>
 <div>
-<%= link_to "Edit Drone", "/drones/#{ @drone.id }/edit", class: "btn btn-warning" %>
-</div>
+  <% if current_user && current_user.admin %>
+    <%= link_to "Edit Drone", "/drones/#{ @drone.id }/edit", class: "btn btn-warning" %>
+    </div>
 
-<div>
-<%= link_to "Delete Drone", "/drones/#{ @drone.id }", method: :delete, class: "btn btn-danger" %>
-</div>
+    <div>
+    <%= link_to "Delete Drone", "/drones/#{ @drone.id }", method: :delete, class: "btn btn-danger" %>
+    </div>
+  <% end %>
 <div>
   <h6>Tags: <%= @drone.categories.pluck(:name).join(", ") %> </h6>
 </div>

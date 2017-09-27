@@ -1,5 +1,7 @@
 class DronesController < ApplicationController
   def index
+    before_action :authenticate_admin!, except: [:index, :show]
+
     @drones = Drone.all
 
     sort_attribute = params[:sort]
@@ -23,6 +25,8 @@ class DronesController < ApplicationController
       @drones = @drones.where("price < ?", discount_amount)
     end
   end
+
+  
 
   def new
     
