@@ -1,13 +1,12 @@
 class DronesController < ApplicationController
-  def index
-    before_action :authenticate_admin!, except: [:index, :show]
+  before_action :authenticate_admin!, except: [:index, :show]
 
+  def index
     @drones = Drone.all
 
     sort_attribute = params[:sort]
     desc_attribute = params[:desc]
     discount_amount = params[:discount]
-
     category_attribute = params[:category_name]
 
     if category_attribute
@@ -29,17 +28,25 @@ class DronesController < ApplicationController
   
 
   def new
-    
+    @drone = Drone.new
+    @suppliers = Supplier.all
   end
 
   def create
-    drone = Drone.new(name: params[:name],
+    @drone = Drone.new(
+                      name: params[:name],
                       description: params[:description],
                       price: params[:price],
                       supplier_id: params[:supplier_id])
-    drone.save
-    flash[:success] = "Drone Successfully Created"
-    redirect_to "/drones/#{drone.id}"
+    
+    if @drone.save
+      flash[:success] = "Drone Successfully Created"
+      redirect_to "/drones/#{@drone.id}"
+    else
+      @suppliers = Supplier.all
+      @errors = @drone.errors.full_messages
+      render "new.html.erb"
+    end
   end
 
   def show

@@ -6,7 +6,7 @@ class Order < ApplicationRecord
   def calculate_subtotal
     sum = 0
     carted_drones.each do |carted_drone|
-      subtotal += carted_drone.sum
+      sum += carted_drone.subtotal
     end  
     self.subtotal = sum
   end

@@ -1,4 +1,6 @@
 class CartedDronesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     if current_user && current_user.current_cart.any?
       @carted_drones = current_user.current_cart
