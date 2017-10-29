@@ -11,7 +11,6 @@ class DronesController < ApplicationController
 
     if category_attribute
       @drones = Category.find_by(name: category_attribute).drones
-
     end
 
     if sort_attribute
