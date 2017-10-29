@@ -1,7 +1,7 @@
-User.create!([
-  {name: "Adam", email: "groovy914@gmail.com", password: "adam", password_confirmation: "adam", admin: true}
-])
-])
+# User.create!([
+#   {name: "Adam", email: "groovy914@gmail.com", password: "adam", password_confirmation: "adam", admin: true}
+# ])
+
 
 Category.create!([
   {name: "1+mile Range"},
@@ -40,6 +40,7 @@ Image.create!([
   {drone_id: 7, url: "https://cdn2.techadvisor.co.uk/cmsdata/features/3659489/dji-spark-release-date-price-hover.jpg"},
   {drone_id: 1, url: "http://www.symatoys.com/upload/X5C/5.jpg"},
   {drone_id: 2, url: "https://images-na.ssl-images-amazon.com/images/I/41ktoScX8ML.jpg"}
+  ])
 
 DroneCategory.create!([
   {category_id: 2, drone_id: 1},
