@@ -9,7 +9,7 @@ class Drone < ApplicationRecord
   validates :name, uniqueness: true
   validates :price, presence: true
   validates :price, numericality: true
-  validates :description, length: {in: 200..500}
+  # validates :description, length: {in: 200..500}
   
   def sale_message
    return "Discounted Item!" if price <= 40
