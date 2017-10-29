@@ -3,20 +3,20 @@
 # ])
 
 
-Category.create!([
-  {name: "1+mile Range"},
-  {name: "4 Rotor"},
-  {name: "6 Rotor"},
-  {name: "FPV"},
-  {name: "4k Camera"},
-  {name: "Standard Camera"}
-])
+# Category.create!([
+#   {name: "1+mile Range"},
+#   {name: "4 Rotor"},
+#   {name: "6 Rotor"},
+#   {name: "FPV"},
+#   {name: "4k Camera"},
+#   {name: "Standard Camera"}
+# ])
 
-Supplier.create!([
-  {name: "Amazon", email: "Spendallofyourmoneyhere@amazon.com", phone_number: "260-555-1234"},
-  {name: "Drone Warehaus", email: "Wehavedrones@warehaus.com", phone_number: "260-555-2345"},
-  {name: "eBay", email: "buy@ebay.com", phone_number: "260-555-3456"}
-])
+# Supplier.create!([
+#   {name: "Amazon", email: "Spendallofyourmoneyhere@amazon.com", phone_number: "260-555-1234"},
+#   {name: "Drone Warehaus", email: "Wehavedrones@warehaus.com", phone_number: "260-555-2345"},
+#   {name: "eBay", email: "buy@ebay.com", phone_number: "260-555-3456"}
+# ])
 
 Drone.create!([
   {name: "DJI Phantom 2", description: "White, 4 rotors, 1.5mile range, FPV, 4k camera with gimble", price: 750, supplier_id: 2},
