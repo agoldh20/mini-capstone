@@ -8,6 +8,11 @@ class DronesController < ApplicationController
     desc_attribute = params[:desc]
     discount_amount = params[:discount]
     category_attribute = params[:category_name]
+    search_term = params[:search_term]
+
+    if search_term
+      @drones = Drone.where("name iLIKE ? OR description iLIKE ?", "%#{search_term}%", "%#{search_term}%", )
+    end
 
     if category_attribute
       @drones = Category.find_by(name: category_attribute).drones
