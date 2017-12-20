@@ -38,10 +38,10 @@ class DronesController < ApplicationController
 
   def create
     @drone = Drone.new(
-                      name: params[:name],
-                      description: params[:description],
-                      price: params[:price],
-                      supplier_id: params[:supplier_id])
+      name: params[:name],
+      description: params[:description],
+      price: params[:price],
+      supplier_id: params[:supplier_id])
     
     if @drone.save
       flash[:success] = "Drone Successfully Created"
@@ -65,10 +65,10 @@ class DronesController < ApplicationController
     drone = Drone.find(params[:id])
 
     drone.assign_attributes(
-                      name: params[:name],
-                      description: params[:description],
-                      price: params[:price]
-                      )
+      name: params[:name],
+      description: params[:description],
+      price: params[:price]
+      )
 
     drone.save
     flash[:success] = "Drone Successfully Updated"
