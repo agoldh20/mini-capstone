@@ -7,6 +7,5 @@ class User < ApplicationRecord
 
   def current_cart
     carted_drones.where(status: "carted")
-
   end
 end

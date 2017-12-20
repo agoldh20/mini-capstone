@@ -1,4 +1,4 @@
-class Drone < ApplicationRecord
+mclass Drone < ApplicationRecord
   belongs_to :supplier
   has_many :images
   has_many :carted_drones
