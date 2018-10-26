@@ -12,8 +12,8 @@ class Drone < ApplicationRecord
   # validates :description, length: {in: 200..500}
   
   def sale_message
-   return "Discounted Item!" if price <= 40
-   return "Everyday Great Value" if price > 40
+    return "Discounted Item!" if price <= 40
+    return "Everyday Great Value" if price > 40
   end
 
   def discounted?
